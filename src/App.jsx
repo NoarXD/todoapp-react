@@ -30,10 +30,15 @@ function App() {
     }, [title, price])
 
     const addTodo = () => {
-        Axios.post("https://colorful-clam-loafers.cyclic.app/add", { title: title, price: price }).then(() => {
-            setTodo([...todo, { title: title, price: price }]);
-        });
-    };
+  Axios.post("https://colorful-clam-loafers.cyclic.app/add", { title: title, price: price })
+    .then((res) => {
+      console.log(res); // log the response object
+      setTodo([...todo, { title: title, price: price }]);
+    })
+    .catch((err) => {
+      console.log(err); // log any error message
+    });
+};
 
     const deleteTodo = (id) => {
         Axios.delete(`https://colorful-clam-loafers.cyclic.app/delete/${id}`).then((res) => {
