@@ -15,7 +15,7 @@ function App() {
     // };
 
     useEffect(() => {
-        Axios.get("http://localhost:3001/todo").then((res) => {
+        Axios.get("https://colorful-clam-loafers.cyclic.app/todo").then((res) => {
             setTodo(res.data.reverse());
         });
     }, []);
@@ -30,13 +30,13 @@ function App() {
     }, [title, price])
 
     const addTodo = () => {
-        Axios.post("http://localhost:3001/add", { title: title, price: price }).then(() => {
+        Axios.post("https://colorful-clam-loafers.cyclic.app/add", { title: title, price: price }).then(() => {
             setTodo([...todo, { title: title, price: price }]);
         });
     };
 
     const deleteTodo = (id) => {
-        Axios.delete(`http://localhost:3001/delete/${id}`).then((res) => {
+        Axios.delete(`https://colorful-clam-loafers.cyclic.app/delete/${id}`).then((res) => {
             setTodo(
                 todo.filter((val) => {
                     return val.id != id
