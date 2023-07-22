@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #dfe3ee;
+}
+
+@media screen and (min-width:1024px) {
+  .bg-second {
+    width: 50%;
+  }
+}
+@media screen and (min-width:768px) {
+  .bg-second {
+    width: 70%;
+  }
+}
